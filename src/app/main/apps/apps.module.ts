@@ -13,6 +13,10 @@ const routes = [
         loadChildren: './dashboards/project/project.module#ProjectDashboardModule'
     },
     {
+        path        : 'enroll',
+        loadChildren: './enroll/enroll.module#EnrollModule'
+    },
+    {
         path        : 'file-manager',
         loadChildren: './file-manager/file-manager.module#FileManagerModule'
     }

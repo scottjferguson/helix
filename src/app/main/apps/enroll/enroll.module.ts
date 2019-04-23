@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatStepperModule } from '@angular/material';
 
 import { HelixSharedModule } from '@helix/shared.module';
 
@@ -21,8 +22,14 @@ const routes = [
         RouterModule.forChild(routes),
 
         TranslateModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatIconModule,
+        MatInputModule,
+        MatSelectModule,
+        MatStepperModule,
 
-        HelixSharedModule
+        HelixSharedModule,
     ],
     exports     : [
         EnrollComponent
