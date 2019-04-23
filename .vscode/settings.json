@@ -1,0 +1,7 @@
+{
+    "appService.zipIgnorePattern": [
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/dc09f123-b75d-4473-8b10-a30b27aa5b1f/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/helix-wa",
+    "appService.deploySubpath": "artifacts"
+}
