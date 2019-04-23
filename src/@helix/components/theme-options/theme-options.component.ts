@@ -138,7 +138,7 @@ export class HelixThemeOptionsComponent implements OnInit, OnDestroy
             'children': [
                 {
                     'id'      : 'customize',
-                    'title'   : 'Customize',
+                    'title'   : 'Settings',
                     'type'    : 'item',
                     'icon'    : 'settings',
                     'function': () => {

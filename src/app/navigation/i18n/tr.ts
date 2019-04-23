@@ -3,10 +3,9 @@ export const locale = {
     data: {
         'NAV': {
             'APPLICATIONS': 'Programlar',
-            'SAMPLE'        : {
-                'TITLE': 'Örnek',
-                'BADGE': '15'
-            }
+            'DASHBOARDS'  : 'Kontrol Paneli',
+            'ENROLL'      : 'Kaydetmek',
+            'FILE_MANAGER': 'Dosya Yöneticisi'
         }
     }
 };

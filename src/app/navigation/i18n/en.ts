@@ -3,10 +3,9 @@ export const locale = {
     data: {
         'NAV': {
             'APPLICATIONS': 'Applications',
-            'SAMPLE'        : {
-                'TITLE': 'Sample',
-                'BADGE': '25'
-            }
+            'DASHBOARDS'  : 'Dashboards',
+            'ENROLL'      : 'Enroll',
+            'FILE_MANAGER': 'File Manager'
         }
     }
 };

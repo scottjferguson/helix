@@ -6,20 +6,44 @@ export const navigation: HelixNavigation[] = [
         title    : 'Applications',
         translate: 'NAV.APPLICATIONS',
         type     : 'group',
+        icon     : 'apps',
         children : [
             {
-                id       : 'sample',
-                title    : 'Sample',
-                translate: 'NAV.SAMPLE.TITLE',
+                id       : 'dashboards',
+                title    : 'Dashboards',
+                translate: 'NAV.DASHBOARDS',
+                type     : 'collapsable',
+                icon     : 'dashboard',
+                children : [
+                    {
+                        id   : 'analytics',
+                        title: 'Analytics',
+                        type : 'item',
+                        url  : '/apps/dashboards/analytics'
+                    },
+                    {
+                        id   : 'project',
+                        title: 'Project',
+                        type : 'item',
+                        url  : '/apps/dashboards/project'
+                    }
+                ]
+            },
+            {
+                id       : 'enroll',
+                title    : 'Enroll',
+                translate: 'NAV.ENROLL',
                 type     : 'item',
-                icon     : 'email',
-                url      : '/sample',
-                badge    : {
-                    title    : '25',
-                    translate: 'NAV.SAMPLE.BADGE',
-                    bg       : '#F44336',
-                    fg       : '#FFFFFF'
-                }
+                icon     : 'person',
+                url      : '/apps/enroll'
+            },
+            {
+                id       : 'file-manager',
+                title    : 'File Manager',
+                translate: 'NAV.FILE_MANAGER',
+                type     : 'item',
+                icon     : 'folder',
+                url      : '/apps/file-manager'
             }
         ]
     }

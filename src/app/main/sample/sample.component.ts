@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { HelixTranslationLoaderService } from '@helix/services/translation-loader.service';
 
 import { locale as english } from './i18n/en';
+import { locale as spanish } from './i18n/es';
 import { locale as turkish } from './i18n/tr';
 
 @Component({
@@ -21,6 +22,6 @@ export class SampleComponent
         private _helixTranslationLoaderService: HelixTranslationLoaderService
     )
     {
-        this._helixTranslationLoaderService.loadTranslations(english, turkish);
+        this._helixTranslationLoaderService.loadTranslations(english, spanish, turkish);
     }
 }
