@@ -1,0 +1,17 @@
+@mixin helix-countdown-theme($theme) {
+
+    $foreground: map-get($theme, foreground);
+
+    helix-countdown {
+
+        .helix-countdown {
+
+            .time {
+
+                .title {
+                    color: map-get($foreground, secondary-text);
+                }
+            }
+        }
+    }
+}

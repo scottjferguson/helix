@@ -1,0 +1,14 @@
+@mixin helix-material-color-picker-theme($theme) {
+
+    $background: map-get($theme, background);
+
+    .helix-material-color-picker-menu {
+
+        .mat-menu-content {
+
+            .views {
+                background: #303030;
+            }
+        }
+    }
+}

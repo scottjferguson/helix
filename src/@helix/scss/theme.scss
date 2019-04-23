@@ -1,0 +1,30 @@
+@import "src/@helix/components/countdown/countdown.theme";
+@import "src/@helix/components/material-color-picker/material-color-picker.theme";
+@import "src/@helix/components/search-bar/search-bar.theme";
+@import "src/@helix/components/shortcuts/shortcuts.theme";
+@import "src/@helix/components/sidebar/sidebar.theme";
+@import "src/@helix/components/theme-options/theme-options.theme";
+@import "src/@helix/components/widget/widget.theme";
+
+@mixin helix-core-theme($theme) {
+
+    // Theming for Helix core styles
+    @include colors-theme($theme);
+    @include cards-theme($theme);
+    @include material-theme($theme);
+    @include page-layouts-theme($theme);
+    @include typography-theme($theme);
+
+    // Theming for Helix components
+    @include helix-countdown-theme($theme);
+    @include helix-search-bar-theme($theme);
+    @include helix-shortcuts-theme($theme);
+    @include helix-sidebar-theme($theme);
+    @include helix-theme-options-theme($theme);
+    @include helix-material-color-picker-theme($theme);
+    @include helix-widget-theme($theme);
+
+    // Theming for 3rd party components
+    @include ngx-datatable-theme($theme);
+}
+

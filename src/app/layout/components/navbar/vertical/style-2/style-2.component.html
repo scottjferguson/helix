@@ -1,0 +1,23 @@
+<div class="navbar-header" [ngClass]="helixConfig.layout.navbar.secondaryBackground">
+
+    <div class="logo">
+        <img class="logo-icon" src="assets/images/logos/helix.svg">
+        <span class="logo-text">HELIX</span>
+    </div>
+
+    <button mat-icon-button class="toggle-sidebar-folded"
+            (click)="toggleSidebarFolded()" fxHide.lt-lg>
+        <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-icon-button class="toggle-sidebar-opened"
+            (click)="toggleSidebarOpened()" fxHide.gt-md>
+        <mat-icon>arrow_back</mat-icon>
+    </button>
+
+</div>
+
+<div class="navbar-content" helixPerfectScrollbar [helixPerfectScrollbarOptions]="{suppressScrollX: true}"
+     [ngClass]="helixConfig.layout.navbar.primaryBackground">
+    <helix-navigation layout="vertical"></helix-navigation>
+</div>

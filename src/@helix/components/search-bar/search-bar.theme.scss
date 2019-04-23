@@ -1,0 +1,11 @@
+@mixin helix-search-bar-theme($theme) {
+
+    $background: map-get($theme, background);
+
+    .helix-search-bar {
+
+        &.expanded {
+            background-color: map-get($background, background);
+        }
+    }
+}
