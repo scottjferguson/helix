@@ -1,7 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 
+import { ProductService } from 'app/main/apps/enroll/product.service';
 import { HelixTranslationLoaderService } from '@helix/services/translation-loader.service';
 
 import { locale as english } from './i18n/en';
@@ -16,16 +18,49 @@ import { locale as turkish } from './i18n/tr';
 export class EnrollComponent implements OnInit, OnDestroy
 {
     form: FormGroup;
+    products: [
+        {
+            'id'      : '15459251a6d6b397565',
+            'title'   : 'Basics of Angular',
+            'slug'    : 'basics-of-angular',
+            'category': 'web',
+            'length'  : 30,
+            'updated' : 'Jun 28, 2017'
+        },
+        {
+            'id'      : '154588a0864d2881124',
+            'title'   : 'Basics of TypeScript',
+            'slug'    : 'basics-of-typeScript',
+            'category': 'web',
+            'length'  : 60,
+            'updated' : 'Nov 01, 2017'
+        },
+        {
+            'id'      : '15453ba60d3baa5daaf',
+            'title'   : 'Android N: Quick Settings',
+            'slug'    : 'android-n-quick-settings',
+            'category': 'android',
+            'length'  : 120,
+            'updated' : 'Jun 28, 2017'
+        },
+        {
+            'id'      : '15453a06c08fb021776',
+            'title'   : 'Keep Sensitive Data Safe and Private',
+            'slug'    : 'keep-sensitive-data-safe-and-private',
+            'category': 'android',
+            'length'  : 45,
+            'updated' : 'Jun 28, 2017'
+        }
+    ];
 
     // Horizontal Stepper
-    horizontalStepperStep1: FormGroup;
-    horizontalStepperStep2: FormGroup;
-    horizontalStepperStep3: FormGroup;
-
-    // Vertical Stepper
-    verticalStepperStep1: FormGroup;
-    verticalStepperStep2: FormGroup;
-    verticalStepperStep3: FormGroup;
+    enrollmentStepPostalCode: FormGroup;
+    enrollmentStepServiceProvider: FormGroup;
+    enrollmentStepEnergyProduct: FormGroup;
+    enrollmentStepCustomerDetails: FormGroup;
+    enrollmentStepAccountDetails: FormGroup;
+    enrollmentStepTermsOfService: FormGroup;
+    enrollmentStepConfirmation: FormGroup;
 
     // Private
     private _unsubscribeAll: Subject<any>;
@@ -33,10 +68,12 @@ export class EnrollComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
+     * @param {ProductService} _productService,
      * @param {HelixTranslationLoaderService} _helixTranslationLoaderService,
      * @param {FormBuilder} _formBuilder
      */
     constructor(
+        //private _productService: ProductService,
         private _helixTranslationLoaderService: HelixTranslationLoaderService,
         private _formBuilder: FormBuilder
     )
@@ -57,54 +94,70 @@ export class EnrollComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Reactive Form
-        this.form = this._formBuilder.group({
-            company   : [
-                {
-                    value   : 'Google',
-                    disabled: true
-                }, Validators.required
-            ],
-            firstName : ['', Validators.required],
-            lastName  : ['', Validators.required],
-            address   : ['', Validators.required],
-            address2  : ['', Validators.required],
-            city      : ['', Validators.required],
-            state     : ['', Validators.required],
-            postalCode: ['', [Validators.required, Validators.maxLength(5)]],
-            country   : ['', Validators.required]
-        });
+        // this.form = this._formBuilder.group({
+        //     company   : [
+        //         {
+        //             value   : 'Google',
+        //             disabled: true
+        //         }, Validators.required
+        //     ],
+        //     firstName : ['', Validators.required],
+        //     lastName  : ['', Validators.required],
+        //     address   : ['', Validators.required],
+        //     address2  : ['', Validators.required],
+        //     city      : ['', Validators.required],
+        //     state     : ['', Validators.required],
+        //     postalCode: ['', [Validators.required, Validators.maxLength(5)]],
+        //     country   : ['', Validators.required]
+        // });
 
         // Horizontal Stepper form steps
-        this.horizontalStepperStep1 = this._formBuilder.group({
-            firstName: ['', Validators.required],
-            lastName : ['', Validators.required]
-        });
-
-        this.horizontalStepperStep2 = this._formBuilder.group({
-            address: ['', Validators.required]
-        });
-
-        this.horizontalStepperStep3 = this._formBuilder.group({
-            city      : ['', Validators.required],
-            state     : ['', Validators.required],
+        this.enrollmentStepPostalCode = this._formBuilder.group({
             postalCode: ['', [Validators.required, Validators.maxLength(5)]]
         });
 
-        // Vertical Stepper form stepper
-        this.verticalStepperStep1 = this._formBuilder.group({
+        this.enrollmentStepServiceProvider = this._formBuilder.group({
+            serviceProvider: ['', Validators.required]
+        });
+
+        this.enrollmentStepEnergyProduct = this._formBuilder.group({
+            
+        });
+
+        this.enrollmentStepCustomerDetails = this._formBuilder.group({
             firstName: ['', Validators.required],
-            lastName : ['', Validators.required]
+            lastName: ['', Validators.required],
+            serviceAddressLine1: ['', Validators.required],
+            serviceAddressLine2: ['', Validators.required],
+            serviceAddressCity: ['', Validators.required],
+            serviceAddressState: ['', Validators.required],
+            serviceAddressPostalCode: ['', [Validators.required, Validators.maxLength(5)]],
+            billingAddressLine1: ['', Validators.required],
+            billingAddressLine2: ['', Validators.required],
+            billingAddressCity: ['', Validators.required],
+            billingAddressState: ['', Validators.required],
+            billingAddressPostalCode: ['', [Validators.required, Validators.maxLength(5)]],
         });
 
-        this.verticalStepperStep2 = this._formBuilder.group({
-            address: ['', Validators.required]
+        this.enrollmentStepAccountDetails = this._formBuilder.group({
+            commodity: ['', Validators.required],
+            accountNumber: ['', Validators.required],
         });
 
-        this.verticalStepperStep3 = this._formBuilder.group({
-            city      : ['', Validators.required],
-            state     : ['', Validators.required],
-            postalCode: ['', [Validators.required, Validators.maxLength(5)]]
+        this.enrollmentStepTermsOfService = this._formBuilder.group({
+            isAgreeToTermsOfService: ['', Validators.required],
+            eSignature: ['', Validators.required]
         });
+
+        this.enrollmentStepConfirmation = this._formBuilder.group({
+            
+        });
+
+        // this._productService.getProducts()
+        //     .pipe(takeUntil(this._unsubscribeAll))
+        //     .subscribe(products => {
+        //         this.products = products;
+        //     });
     }
 
     /**
@@ -122,18 +175,10 @@ export class EnrollComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
-     * Finish the horizontal stepper
+     * Finish the enrollment
      */
-    finishHorizontalStepper(): void
+    finishEnrollment(): void
     {
-        alert('You have finished the horizontal stepper!');
-    }
-
-    /**
-     * Finish the vertical stepper
-     */
-    finishVerticalStepper(): void
-    {
-        alert('You have finished the vertical stepper!');
+        location.reload();
     }
 }

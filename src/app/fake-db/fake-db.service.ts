@@ -2,6 +2,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 import { ProjectDashboardDb } from 'app/fake-db/dashboard-project';
 import { AnalyticsDashboardDb } from 'app/fake-db/dashboard-analytics';
+import { ProductFakeDb } from 'app/fake-db/products';
 import { FileManagerFakeDb } from 'app/fake-db/file-manager';
 import { ProfileFakeDb } from 'app/fake-db/profile';
 import { IconsFakeDb } from 'app/fake-db/icons';
@@ -16,6 +17,9 @@ export class FakeDbService implements InMemoryDbService
             'project-dashboard-projects' : ProjectDashboardDb.projects,
             'project-dashboard-widgets'  : ProjectDashboardDb.widgets,
             'analytics-dashboard-widgets': AnalyticsDashboardDb.widgets,
+
+            // Products
+            'products': ProductFakeDb.products,
 
             // File Manager
             'file-manager': FileManagerFakeDb.files,

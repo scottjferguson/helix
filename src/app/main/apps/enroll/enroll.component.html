@@ -1,174 +1,175 @@
 <div id="forms" class="page-layout simple fullwidth" fxLayout="column">
 
-    <!-- HEADER -->
+    
     <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column" fxLayoutAlign="center start">
             <div fxLayout="row" fxLayoutAlign="start center">
                 <mat-icon class="secondary-text s-18">home</mat-icon>
                 <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
-                <span class="secondary-text">User Interface</span>
+                <span class="secondary-text">Applications</span>
+                <mat-icon class="secondary-text s-16">chevron_right</mat-icon>
+                <span class="secondary-text">New Enrollment</span>
             </div>
-            <div class="h1 mt-16">Forms</div>
+            <div class="h1 mt-16">Enroll New Customer</div>
         </div>
     </div>
+
+    <!-- HEADER -->
+    <!-- <div class="header accent p-16 p-sm-24" fxLayout="column" fxLayoutAlign="center center">
+
+        <div class="hero-text">
+            <mat-icon class="hero-icon">school</mat-icon>
+            <h1 [@animate]="{value:'*',params:{delay:'100ms', y:'25px'}}">
+                WELCOME TO ACADEMY
+            </h1>
+            <h3 [@animate]="{value:'*',params:{delay:'100ms', y:'25px'}}">
+                Our courses will step you through the process of building a small application, or adding a new feature
+                to an existing application.
+            </h3>
+        </div>
+
+    </div> -->
     <!-- / HEADER -->
 
     <!-- CONTENT -->
     <div class="content p-24">
 
-        <div class="h1">
-            Reactive Forms
-        </div>
-
-        <p class="pt-16 pb-32">
-            Angular reactive forms facilitate a reactive style of programming that favors explicit management of the
-            data flowing between a non-UI data model (typically retrieved from a server) and a UI-oriented form model
-            that retains the states and values of the HTML controls on screen. Reactive forms offer the ease of using
-            reactive patterns, testing, and validation.
-        </p>
-
-        <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
-
-            <!-- REACTIVE FORM EXAMPLE -->
-
-            <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start"
-                  fxFlex="1 0 auto" name="form" [formGroup]="form">
-
-                <div class="h2 mb-24">Reactive Form Example</div>
-
-                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
-
-                    <mat-form-field appearance="outline" fxFlex="100">
-                        <mat-label>Company (disabled)</mat-label>
-                        <input matInput formControlName="company">
-                        <mat-icon matSuffix class="disabled-text">domain</mat-icon>
-                    </mat-form-field>
-
-                </div>
-
-                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
-
-                    <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
-                        <mat-label>First name</mat-label>
-                        <input matInput formControlName="firstName" required>
-                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
-                        <mat-error>First Name is required!</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
-                        <mat-label>Last name</mat-label>
-                        <input matInput formControlName="lastName" required>
-                        <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
-                        <mat-error>Last Name is required!</mat-error>
-                    </mat-form-field>
-
-                </div>
-
-                <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
-
-                    <mat-form-field appearance="outline" fxFlex="100">
-                        <mat-label>Address</mat-label>
-                        <textarea matInput formControlName="address" required>
-                            1600 Amphitheatre Pkwy
-                        </textarea>
-                        <mat-error>Address is required!</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline" fxFlex="100">
-                        <mat-label>Address 2</mat-label>
-                        <textarea matInput formControlName="address2"></textarea>
-                        <mat-error>Address 2 is required!</mat-error>
-                    </mat-form-field>
-
-                </div>
-
-                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
-
-                    <mat-form-field appearance="outline" fxFlex="33">
-                        <mat-label>City</mat-label>
-                        <input matInput formControlName="city" required>
-                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
-                        <mat-error>City is required!</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline" fxFlex="34" class="px-8">
-                        <mat-label>State</mat-label>
-                        <input matInput formControlName="state" required>
-                        <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
-                        <mat-error>State is required!</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline" fxFlex="33">
-                        <mat-label>Postal Code</mat-label>
-                        <input matInput #postalCode value="94043"
-                               formControlName="postalCode" maxlength="5" required>
-                        <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
-                        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-                        <mat-error>Postal Code is required!</mat-error>
-                    </mat-form-field>
-
-                </div>
-
-                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
-
-                    <mat-form-field appearance="outline" fxFlex="100">
-                        <mat-label>Country</mat-label>
-                        <mat-select formControlName="country" required>
-                            <mat-option [value]="'United States of America'">
-                                United States of America
-                            </mat-option>
-                            <mat-option [value]="'United Kingdom'">
-                                United Kingdom
-                            </mat-option>
-                            <mat-option [value]="'Russia'">
-                                Russia
-                            </mat-option>
-                            <mat-option [value]="'China'">
-                                China
-                            </mat-option>
-                            <mat-option [value]="'Japan'">
-                                Japan
-                            </mat-option>
-                            <mat-option [value]="'Turkey'">
-                                Turkey
-                            </mat-option>
-                        </mat-select>
-                        <mat-icon matSuffix class="secondary-text">outlined_flag</mat-icon>
-                        <mat-error>Country is required!</mat-error>
-                    </mat-form-field>
-
-                </div>
-
-            </form>
-
-            <!-- / REACTIVE FORM EXAMPLE -->
-
-            <div class="mat-card form-errors-model p-24 mat-elevation-z4">
-                <div class="h2 mb-24">Reactive Form Model</div>
-                <pre><code>{{form.getRawValue() | json}}</code></pre>
-            </div>
-
-        </div>
-
-        <div class="h1 pt-32">
-            Horizontal Stepper
-        </div>
-
-        <p class="pb-32">
-            Angular Material's stepper provides a wizard-like workflow by dividing content into logical steps.
-            <code>mat-horizontal-stepper</code> selector can be used to create a horizontal stepper.
-        </p>
-
-        <div class="horizontal-stepper-wrapper">
+        <div class="enrollment-stepper-wrapper">
 
             <!-- HORIZONTAL STEPPER EXAMPLE -->
             <mat-horizontal-stepper class="mat-elevation-z4" [linear]="true">
 
-                <mat-step [stepControl]="horizontalStepperStep1">
+                <mat-step [stepControl]="enrollmentStepPostalCode">
 
-                    <form fxLayout="column" [formGroup]="horizontalStepperStep1">
+                    <form fxLayout="column" [formGroup]="enrollmentStepPostalCode">
 
-                        <ng-template matStepLabel>Fill out your name</ng-template>
+                        <ng-template matStepLabel>Location</ng-template>
+
+                        <div fxFlex="1 0 auto" fxLayout="column">
+
+                            <mat-form-field appearance="outline" fxFlex="100" class="postal-code">
+                                <mat-label>Postal Code</mat-label>
+                                <input matInput #postalCode formControlName="postalCode" maxlength="5" required>
+                                <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
+                                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+                                <mat-error>Postal Code is required!</mat-error>
+                            </mat-form-field>
+
+                        </div> 
+
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Next
+                            </button>
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="enrollmentStepServiceProvider">
+
+                    <form fxLayout="column" [formGroup]="enrollmentStepServiceProvider">
+
+                        <ng-template matStepLabel>Service</ng-template>
+
+                        <div fxFlex="1 0 auto" fxLayout="row">
+
+                            <mat-form-field class="service-provider">
+                                <mat-select formControlName="serviceProvider" placeholder="Service Provider">
+                                  <mat-option [value]="ONC">
+                                    Oncor
+                                  </mat-option>
+                                </mat-select>
+                              </mat-form-field>
+
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                                Previous
+                            </button>
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Next
+                            </button>
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="enrollmentStepEnergyProduct">
+
+                    <form fxLayout="column" [formGroup]="enrollmentStepEnergyProduct">
+
+                        <ng-template matStepLabel>Product</ng-template>
+
+                        <div fxFlex="1 0 auto" fxLayout="row">
+
+                            <div class="products" fxLayout="row wrap" fxLayoutAlign="center" [@animateStagger]="{value:'50'}">
+
+                                <div class="product" *ngFor="let product of products" fxFlex="100" fxFlex.gt-xs="50"
+                                        fxFlex.gt-sm="33" [ngClass]="product.category" [@animate]="{value:'*',params:{y:'100%'}}">
+                
+                                    <div class="product-content" fxLayout="column" fxFlex="1 1 auto">
+                
+                                        <div class="header" fxLayout="row" fxLayoutAlign="center center" [ngClass]="product.category + '-bg'">
+                
+                                            <div class="category" fxFlex>
+                                                {{product.category}}
+                                            </div>
+                
+                                            <div class="length" fxLayout="row" fxLayoutAlign="center center">
+                                                <mat-icon class="length-icon s-20">access_time</mat-icon>
+                                                <div class="min">{{product.length}} min</div>
+                                            </div>
+                
+                                        </div>
+                
+                                        <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+                                            <div class="h1">{{product.title}}</div>
+                                            <div class="updated">Updated {{product.updated}}</div>
+                                        </div>
+                
+                                        <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+                                            <button mat-button color="accent"
+                                                    [routerLink]="'/apps/academy/products/' + product.id + '/' + product.slug">
+                                                START
+                                            </button>
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                                <!-- <div class="no-products" *ngIf="products.length === 0">
+                                    No products found!
+                                </div> -->
+                    
+                            </div>
+
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                                Previous
+                            </button>
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Next
+                            </button>
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="enrollmentStepCustomerDetails">
+
+                    <form fxLayout="column" [formGroup]="enrollmentStepPersonalDetails">
+
+                        <ng-template matStepLabel>Name & Address</ng-template>
+
+                        <h2>Name</h2>
 
                         <div fxFlex="1 0 auto" fxLayout="column">
 
@@ -186,71 +187,138 @@
 
                         </div>
 
-                        <div fxLayout="row" fxLayoutAlign="center center">
-                            <button mat-raised-button matStepperNext type="button" color="accent">
-                                Next
-                            </button>
-                        </div>
+                        <h2>Service Address</h2>
 
-                    </form>
-
-                </mat-step>
-
-                <mat-step [stepControl]="horizontalStepperStep2">
-
-                    <form fxLayout="column" [formGroup]="horizontalStepperStep2">
-
-                        <ng-template matStepLabel>Fill out your address</ng-template>
-
-                        <div fxFlex="1 0 auto" fxLayout="row">
+                        <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Address</mat-label>
-                                <textarea matInput formControlName="address" required>
-                                    1600 Amphitheatre Pkwy
-                                </textarea>
+                                <input matInput formControlName="serviceAddressLine1" required>
                                 <mat-error>Address is required!</mat-error>
                             </mat-form-field>
-
+        
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Address 2</mat-label>
+                                <textarea matInput formControlName="serviceAddressLine2">
+                                <mat-error>Address 2 is required!</mat-error>
+                            </mat-form-field>
+        
                         </div>
-
-                        <div fxLayout="row" fxLayoutAlign="center center">
-                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
-                                Previous
-                            </button>
-                            <button mat-raised-button matStepperNext type="button" color="accent">
-                                Next
-                            </button>
-                        </div>
-
-                    </form>
-
-                </mat-step>
-
-                <mat-step [stepControl]="horizontalStepperStep3">
-
-                    <form fxLayout="column" [formGroup]="horizontalStepperStep3">
-
-                        <ng-template matStepLabel>Fill out your address</ng-template>
 
                         <div fxFlex="1 0 auto" fxLayout="column">
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>City</mat-label>
-                                <input matInput formControlName="city" required>
+                                <input matInput formControlName="serviceAddressCity" required disabled>Houston</input>
+                                <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                                 <mat-error>City is required!</mat-error>
                             </mat-form-field>
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>State</mat-label>
-                                <input matInput formControlName="state" required>
+                                <input matInput formControlName="serviceAddressState" required disabled>TX</input>
+                                <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                                 <mat-error>State is required!</mat-error>
                             </mat-form-field>
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Postal Code</mat-label>
-                                <input matInput #postalCode2 formControlName="postalCode"
-                                       maxlength="5" required>
+                                <input matInput formControlName="serviceAddressPostalCode" maxlength="5" required disabled>{{postalCode.value}}</input>
+                                <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
+                                <mat-error>Postal Code is required!</mat-error>
+                            </mat-form-field>
+
+                        </div>
+
+                        <h2>Billing Address</h2>
+
+                        <div fxLayout="row wrap" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Address</mat-label>
+                                <input matInput formControlName="billingAddressLine1" required></input>
+                                <mat-error>Address is required!</mat-error>
+                            </mat-form-field>
+        
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Address 2</mat-label>
+                                <textarea matInput formControlName="billingAddressLine2"></textarea>
+                                <mat-error>Address 2 is required!</mat-error>
+                            </mat-form-field>
+            
+                        </div>
+
+                        <div fxFlex="1 0 auto" fxLayout="column">
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>City</mat-label>
+                                <input matInput formControlName="billingAddressCity" required>
+                                <mat-error>City is required!</mat-error>
+                                <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>State</mat-label>
+                                <mat-select formControlName="billingAddressState" required>
+                                    <mat-option [value]="AK">AK</mat-option>
+                                    <mat-option [value]="AL">AL</mat-option>
+                                    <mat-option [value]="AR">AR</mat-option>
+                                    <mat-option [value]="AZ">AZ</mat-option>
+                                    <mat-option [value]="CA">CA</mat-option>
+                                    <mat-option [value]="CO">CO</mat-option>
+                                    <mat-option [value]="CT">CT</mat-option>
+                                    <mat-option [value]="DE">DE</mat-option>
+                                    <mat-option [value]="FL">FL</mat-option>
+                                    <mat-option [value]="GA">GA</mat-option>
+                                    <mat-option [value]="HI">HI</mat-option>
+                                    <mat-option [value]="IA">IA</mat-option>
+                                    <mat-option [value]="ID">ID</mat-option>
+                                    <mat-option [value]="IL">IL</mat-option>
+                                    <mat-option [value]="IN">IN</mat-option>
+                                    <mat-option [value]="KS">KS</mat-option>
+                                    <mat-option [value]="KY">KY</mat-option>
+                                    <mat-option [value]="LA">LA</mat-option>
+                                    <mat-option [value]="MA">MA</mat-option>
+                                    <mat-option [value]="MD">MD</mat-option>
+                                    <mat-option [value]="ME">ME</mat-option>
+                                    <mat-option [value]="MI">MI</mat-option>
+                                    <mat-option [value]="MN">MN</mat-option>
+                                    <mat-option [value]="MO">MO</mat-option>
+                                    <mat-option [value]="MS">MS</mat-option>
+                                    <mat-option [value]="MT">MT</mat-option>
+                                    <mat-option [value]="NC">NC</mat-option>
+                                    <mat-option [value]="ND">ND</mat-option>
+                                    <mat-option [value]="NE">NE</mat-option>
+                                    <mat-option [value]="NH">NH</mat-option>
+                                    <mat-option [value]="NJ">NJ</mat-option>
+                                    <mat-option [value]="NM">NM</mat-option>
+                                    <mat-option [value]="NV">NV</mat-option>
+                                    <mat-option [value]="NY">NY</mat-option>
+                                    <mat-option [value]="OH">OH</mat-option>
+                                    <mat-option [value]="OK">OK</mat-option>
+                                    <mat-option [value]="OR">OR</mat-option>
+                                    <mat-option [value]="PA">PA</mat-option>
+                                    <mat-option [value]="RI">RI</mat-option>
+                                    <mat-option [value]="SC">SC</mat-option>
+                                    <mat-option [value]="SD">SD</mat-option>
+                                    <mat-option [value]="TN">TN</mat-option>
+                                    <mat-option [value]="TX">TX</mat-option>
+                                    <mat-option [value]="UT">UT</mat-option>
+                                    <mat-option [value]="VA">VA</mat-option>
+                                    <mat-option [value]="VT">VT</mat-option>
+                                    <mat-option [value]="WA">WA</mat-option>
+                                    <mat-option [value]="WI">WI</mat-option>
+                                    <mat-option [value]="WV">WV</mat-option>
+                                    <mat-option [value]="WY">WY</mat-option>
+                                </mat-select>
+                                <mat-error>State is required!</mat-error>
+                                <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
+                            </mat-form-field>
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Postal Code</mat-label>
+                                <input matInput #postalCode2 formControlName="billingAddressPostalCode" maxlength="5" required disabled>
+                                <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
                                 <mat-hint align="end">{{postalCode2.value.length}} / 5</mat-hint>
                                 <mat-error>Postal Code is required!</mat-error>
                             </mat-form-field>
@@ -270,20 +338,115 @@
 
                 </mat-step>
 
-                <mat-step>
+                <mat-step [stepControl]="enrollmentStepAccountDetails">
 
-                    <ng-template matStepLabel>Done</ng-template>
+                    <form fxLayout="column" [formGroup]="enrollmentStepAccountDetails">
+
+                        <ng-template matStepLabel>Service Account</ng-template>
+
+                        <h2>Account Details</h2>
+
+                        <div fxFlex="1 0 auto" fxLayout="column">
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Gas or Electric?</mat-label>
+                                <mat-select formControlName="commodity" required disabled>
+                                    <mat-option [value]="Electric">Electric</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div fxFlex="1 0 auto" fxLayout="column">
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Account Number</mat-label>
+                                <input matInput formControlName="accountNumber" required>
+                                <mat-error>Account Number is required!</mat-error>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                                Previous
+                            </button>
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Next
+                            </button>
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="enrollmentStepTermsOfService">
+
+                    <form fxLayout="column" [formGroup]="enrollmentStepTermsOfService">
+
+                        <ng-template matStepLabel>E-Signature</ng-template>
+
+                        <h2>Terms of Service</h2>
+
+                        <div fxFlex="1 0 auto" fxLayout="column">
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <textarea matInput formControlName="termsOfService">
+
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+
+                                        <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+                                        
+                                        <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. </p>
+                                        
+                                        <p>Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. </p>
+                                        
+                                        <p>Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. </p>
+
+                                </textarea>
+                            </mat-form-field>
+
+                            <!-- <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-slide-toggle matInput formControlName="isAgreeToTermsOfService" required>I agree to the Terms of Service</mat-slide-toggle>
+                                <mat-error>Please agree to the Terms of Service to continue</mat-error>
+                            </mat-form-field> -->
+
+                        </div>
+
+                        <div fxFlex="1 0 auto" fxLayout="column">
+
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>E-Signature</mat-label>
+                                <input matInput formControlName="eSignature" required>
+                                <mat-error>E-Signature is required!</mat-error>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
+                                Previous
+                            </button>
+                            <button mat-raised-button matStepperNext type="button" color="accent">
+                                Next
+                            </button>
+                        </div>
+
+                    </form>
+
+                </mat-step>
+
+                <mat-step [stepControl]="enrollmentStepConfirmation">
+
+                    <ng-template matStepLabel>Confirmation</ng-template>
 
                     <div class="h2 m-16" fxLayout="row" fxLayoutAlign="center center">
-                        Thank your for filling out our form.
+                        Confirmation Number: #123456789
                     </div>
 
                     <div fxLayout="row" fxLayoutAlign="center center">
-                        <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
-                            Previous
-                        </button>
-                        <button mat-raised-button type="button" color="accent" (click)="finishHorizontalStepper()">
-                            Finish
+                        <button mat-raised-button type="button" color="accent" (click)="finishEnrollment()">
+                            Close
                         </button>
                     </div>
 
@@ -291,150 +454,6 @@
 
             </mat-horizontal-stepper>
             <!-- / HORIZONTAL STEPPER EXAMPLE -->
-
-        </div>
-
-        <div class="h1 pt-48">
-            Vertical Stepper
-        </div>
-
-        <p class="pb-32">
-            Angular Material's stepper provides a wizard-like workflow by dividing content into logical steps.
-            <code>mat-vertical-stepper</code> can be used to create a vertical stepper.
-        </p>
-
-        <div class="vertical-stepper-wrapper">
-
-            <!-- VERTICAL STEPPER EXAMPLE -->
-            <mat-vertical-stepper class="mat-elevation-z4" [linear]="true">
-
-                <mat-step [stepControl]="verticalStepperStep1">
-
-                    <form fxLayout="column" [formGroup]="verticalStepperStep1">
-
-                        <ng-template matStepLabel>Fill out your name</ng-template>
-
-                        <div fxFlex="1 0 auto" fxLayout="column">
-
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>First Name</mat-label>
-                                <input matInput formControlName="firstName" required>
-                                <mat-error>First Name is required!</mat-error>
-                            </mat-form-field>
-
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>Last Name</mat-label>
-                                <input matInput formControlName="lastName" required>
-                                <mat-error>Last Name is required!</mat-error>
-                            </mat-form-field>
-
-                        </div>
-
-                        <div fxLayout="row" fxLayoutAlign="center center">
-                            <button mat-raised-button matStepperNext type="button" color="accent">
-                                Next
-                            </button>
-                        </div>
-
-                    </form>
-
-                </mat-step>
-
-                <mat-step [stepControl]="verticalStepperStep2">
-
-                    <form fxLayout="column" [formGroup]="verticalStepperStep2">
-
-                        <ng-template matStepLabel>Fill out your address</ng-template>
-
-                        <div fxFlex="1 0 auto" fxLayout="row">
-
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>Address</mat-label>
-                                <textarea matInput formControlName="address" required>
-                                    1600 Amphitheatre Pkwy
-                                </textarea>
-                                <mat-error>Address is required!</mat-error>
-                            </mat-form-field>
-
-                        </div>
-
-                        <div fxLayout="row" fxLayoutAlign="center center">
-                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
-                                Previous
-                            </button>
-                            <button mat-raised-button matStepperNext type="button" color="accent">
-                                Next
-                            </button>
-                        </div>
-
-                    </form>
-
-                </mat-step>
-
-                <mat-step [stepControl]="verticalStepperStep3">
-
-                    <form fxLayout="column" [formGroup]="verticalStepperStep3">
-
-                        <ng-template matStepLabel>Fill out your address</ng-template>
-
-                        <div fxFlex="1 0 auto" fxLayout="column">
-
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>City</mat-label>
-                                <input matInput formControlName="city" required>
-                                <mat-error>City is required!</mat-error>
-                            </mat-form-field>
-
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>State</mat-label>
-                                <input matInput formControlName="state" required>
-                                <mat-error>State is required!</mat-error>
-                            </mat-form-field>
-
-                            <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>Postal Code</mat-label>
-                                <input matInput #postalCode3 formControlName="postalCode"
-                                       maxlength="5" required>
-                                <mat-hint align="end">{{postalCode3.value.length}} / 5</mat-hint>
-                                <mat-error>Postal Code is required!</mat-error>
-                            </mat-form-field>
-
-                        </div>
-
-                        <div fxLayout="row" fxLayoutAlign="center center">
-                            <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
-                                Previous
-                            </button>
-                            <button mat-raised-button matStepperNext type="button" color="accent">
-                                Next
-                            </button>
-                        </div>
-
-                    </form>
-
-                </mat-step>
-
-                <mat-step>
-
-                    <ng-template matStepLabel>Done</ng-template>
-
-                    <div class="h2 m-16" fxLayout="row" fxLayoutAlign="center center">
-                        Thank your for filling out our form.
-                    </div>
-
-                    <div fxLayout="row" fxLayoutAlign="center center">
-                        <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
-                            Previous
-                        </button>
-                        <button mat-raised-button type="button" color="accent" (click)="finishVerticalStepper()">
-                            Finish
-                        </button>
-                    </div>
-
-                </mat-step>
-
-            </mat-vertical-stepper>
-            <!-- / VERTICAL STEPPER EXAMPLE -->
 
         </div>
 

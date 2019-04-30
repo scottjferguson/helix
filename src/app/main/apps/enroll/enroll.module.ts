@@ -5,11 +5,11 @@ import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, Mat
 
 import { HelixSharedModule } from '@helix/shared.module';
 
-import { EnrollComponent } from './enroll.component';
+import { EnrollComponent } from 'app/main/apps/enroll/enroll.component';
 
 const routes = [
     {
-        path     : 'enroll',
+        path     : '**',
         component: EnrollComponent
     }
 ];

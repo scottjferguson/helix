@@ -4,7 +4,6 @@
 
         form {
             width: 100%;
-            max-width: 800px !important;
         }
 
         .form-errors-model {
@@ -15,9 +14,14 @@
             }
         }
 
-        .horizontal-stepper-wrapper,
-        .vertical-stepper-wrapper {
-            max-width: 800px;
+        .postal-code {
+            min-width: 100px;
+            max-width: 300px;
+        }
+
+        .service-provider {
+            min-width: 500px;
+            max-width: 1000px;
         }
     }
 }
