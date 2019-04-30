@@ -1,0 +1,20 @@
+//https://prod-15.centralus.logic.azure.com/workflows/ee3d0fef84ec4fde8266c733c78dce8e/triggers/manual/paths/invoke/lead/create?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tazTctrkiWRj15AfGDjNogjmtcK8IH8OSaabmp2cFuc
+
+{
+    "id" : null,
+    "orderId" : null,
+    "orderStatus" : null,
+    "type" : "Order",
+    "createDate" : null,
+    "effectiveDate" : "2018-05-26",
+    "customerType" : "Residential",
+    "firstName" : "Andy",
+    "lastName" : "G",
+    "billingAddress1" : "Some road",
+    "billingAddress2" : "",
+    "billingCity" : "Houston",
+    "billingState" : "TX",
+    "billingPostal" : "36037",
+    "billingCounty" : "",
+    "billingCountry" : "USA"
+}
