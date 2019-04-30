@@ -2,11 +2,6 @@
     "appService.zipIgnorePattern": [
         ".vscode{,/**}"
     ],
-<<<<<<< HEAD
-    "appService.defaultWebAppToDeploy": "/subscriptions/dc09f123-b75d-4473-8b10-a30b27aa5b1f/resourceGroups/helix-test-rg/providers/Microsoft.Web/sites/helix-test",
-    "appService.deploySubpath": "artifacts"
-=======
     "appService.deploySubpath": "artifacts",
     "appService.defaultWebAppToDeploy": "/subscriptions/dc09f123-b75d-4473-8b10-a30b27aa5b1f/resourceGroups/helix-test-rg/providers/Microsoft.Web/sites/helix-test"
->>>>>>> master
 }
