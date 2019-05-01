@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { MatButtonModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatStepperModule } from '@angular/material';
+import { MatButtonModule, MatSlideToggleModule, MatFormFieldModule, MatIconModule, MatInputModule, MatSelectModule, MatStepperModule } from '@angular/material';
 
 import { HelixSharedModule } from '@helix/shared.module';
 
@@ -23,6 +23,7 @@ const routes = [
 
         TranslateModule,
         MatButtonModule,
+        MatSlideToggleModule,
         MatFormFieldModule,
         MatIconModule,
         MatInputModule,

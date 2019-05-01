@@ -45,6 +45,8 @@
 
                         <ng-template matStepLabel>Location</ng-template>
 
+                        <h2>Location</h2>
+
                         <div fxFlex="1 0 auto" fxLayout="column">
 
                             <mat-form-field appearance="outline" fxFlex="100" class="postal-code">
@@ -71,12 +73,14 @@
 
                     <form fxLayout="column" [formGroup]="enrollmentStepServiceProvider">
 
-                        <ng-template matStepLabel>Service</ng-template>
+                        <ng-template matStepLabel>Service Provider</ng-template>
+
+                        <h2>Service Provider</h2>
 
                         <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
 
                             <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>Service Provider</mat-label>
+                                <mat-label>Please Select</mat-label>
                                 <mat-select formControlName="serviceProvider" required>
                                     <mat-option [value]="'ONC'">
                                         Oncor
@@ -167,7 +171,7 @@
 
                 <mat-step [stepControl]="enrollmentStepCustomerDetails">
 
-                    <form fxLayout="column" [formGroup]="enrollmentStepPersonalDetails">
+                    <form fxLayout="column" [formGroup]="enrollmentStepCustomerDetails">
 
                         <ng-template matStepLabel>Name & Address</ng-template>
 
@@ -202,7 +206,6 @@
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Address 2</mat-label>
                                 <input matInput formControlName="serviceAddressLine2">
-                                <mat-error>Address 2 is required!</mat-error>
                             </mat-form-field>
         
                         </div>
@@ -211,21 +214,21 @@
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>City</mat-label>
-                                <input matInput formControlName="serviceAddressCity" value="Houston" required disabled>
+                                <input matInput formControlName="serviceAddressCity" value="Houston" disabled>
                                 <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                                 <mat-error>City is required!</mat-error>
                             </mat-form-field>
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>State</mat-label>
-                                <input matInput formControlName="serviceAddressState" value="TX" required disabled>
+                                <input matInput formControlName="serviceAddressState" value="TX" disabled>
                                 <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                                 <mat-error>State is required!</mat-error>
                             </mat-form-field>
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Postal Code</mat-label>
-                                <input matInput formControlName="serviceAddressPostalCode" value="{{postalCode.value}}" maxlength="5" required disabled>
+                                <input matInput formControlName="serviceAddressPostalCode" value="{{postalCode.value}}" maxlength="5" disabled>
                                 <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
                                 <mat-error>Postal Code is required!</mat-error>
                             </mat-form-field>
@@ -245,7 +248,6 @@
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Address 2</mat-label>
                                 <input matInput formControlName="billingAddressLine2">
-                                <mat-error>Address 2 is required!</mat-error>
                             </mat-form-field>
             
                         </div>
@@ -262,56 +264,56 @@
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>State</mat-label>
                                 <mat-select formControlName="billingAddressState" required>
-                                    <mat-option [value]="AK">AK</mat-option>
-                                    <mat-option [value]="AL">AL</mat-option>
-                                    <mat-option [value]="AR">AR</mat-option>
-                                    <mat-option [value]="AZ">AZ</mat-option>
-                                    <mat-option [value]="CA">CA</mat-option>
-                                    <mat-option [value]="CO">CO</mat-option>
-                                    <mat-option [value]="CT">CT</mat-option>
-                                    <mat-option [value]="DE">DE</mat-option>
-                                    <mat-option [value]="FL">FL</mat-option>
-                                    <mat-option [value]="GA">GA</mat-option>
-                                    <mat-option [value]="HI">HI</mat-option>
-                                    <mat-option [value]="IA">IA</mat-option>
-                                    <mat-option [value]="ID">ID</mat-option>
-                                    <mat-option [value]="IL">IL</mat-option>
-                                    <mat-option [value]="IN">IN</mat-option>
-                                    <mat-option [value]="KS">KS</mat-option>
-                                    <mat-option [value]="KY">KY</mat-option>
-                                    <mat-option [value]="LA">LA</mat-option>
-                                    <mat-option [value]="MA">MA</mat-option>
-                                    <mat-option [value]="MD">MD</mat-option>
-                                    <mat-option [value]="ME">ME</mat-option>
-                                    <mat-option [value]="MI">MI</mat-option>
-                                    <mat-option [value]="MN">MN</mat-option>
-                                    <mat-option [value]="MO">MO</mat-option>
-                                    <mat-option [value]="MS">MS</mat-option>
-                                    <mat-option [value]="MT">MT</mat-option>
-                                    <mat-option [value]="NC">NC</mat-option>
-                                    <mat-option [value]="ND">ND</mat-option>
-                                    <mat-option [value]="NE">NE</mat-option>
-                                    <mat-option [value]="NH">NH</mat-option>
-                                    <mat-option [value]="NJ">NJ</mat-option>
-                                    <mat-option [value]="NM">NM</mat-option>
-                                    <mat-option [value]="NV">NV</mat-option>
-                                    <mat-option [value]="NY">NY</mat-option>
-                                    <mat-option [value]="OH">OH</mat-option>
-                                    <mat-option [value]="OK">OK</mat-option>
-                                    <mat-option [value]="OR">OR</mat-option>
-                                    <mat-option [value]="PA">PA</mat-option>
-                                    <mat-option [value]="RI">RI</mat-option>
-                                    <mat-option [value]="SC">SC</mat-option>
-                                    <mat-option [value]="SD">SD</mat-option>
-                                    <mat-option [value]="TN">TN</mat-option>
-                                    <mat-option [value]="TX">TX</mat-option>
-                                    <mat-option [value]="UT">UT</mat-option>
-                                    <mat-option [value]="VA">VA</mat-option>
-                                    <mat-option [value]="VT">VT</mat-option>
-                                    <mat-option [value]="WA">WA</mat-option>
-                                    <mat-option [value]="WI">WI</mat-option>
-                                    <mat-option [value]="WV">WV</mat-option>
-                                    <mat-option [value]="WY">WY</mat-option>
+                                    <mat-option [value]="'AK'">AK</mat-option>
+                                    <mat-option [value]="'AL'">AL</mat-option>
+                                    <mat-option [value]="'AR'">AR</mat-option>
+                                    <mat-option [value]="'AZ'">AZ</mat-option>
+                                    <mat-option [value]="'CA'">CA</mat-option>
+                                    <mat-option [value]="'CO'">CO</mat-option>
+                                    <mat-option [value]="'CT'">CT</mat-option>
+                                    <mat-option [value]="'DE'">DE</mat-option>
+                                    <mat-option [value]="'FL'">FL</mat-option>
+                                    <mat-option [value]="'GA'">GA</mat-option>
+                                    <mat-option [value]="'HI'">HI</mat-option>
+                                    <mat-option [value]="'IA'">IA</mat-option>
+                                    <mat-option [value]="'ID'">ID</mat-option>
+                                    <mat-option [value]="'IL'">IL</mat-option>
+                                    <mat-option [value]="'IN'">IN</mat-option>
+                                    <mat-option [value]="'KS'">KS</mat-option>
+                                    <mat-option [value]="'KY'">KY</mat-option>
+                                    <mat-option [value]="'LA'">LA</mat-option>
+                                    <mat-option [value]="'MA'">MA</mat-option>
+                                    <mat-option [value]="'MD'">MD</mat-option>
+                                    <mat-option [value]="'ME'">ME</mat-option>
+                                    <mat-option [value]="'MI'">MI</mat-option>
+                                    <mat-option [value]="'MN'">MN</mat-option>
+                                    <mat-option [value]="'MO'">MO</mat-option>
+                                    <mat-option [value]="'MS'">MS</mat-option>
+                                    <mat-option [value]="'MT'">MT</mat-option>
+                                    <mat-option [value]="'NC'">NC</mat-option>
+                                    <mat-option [value]="'ND'">ND</mat-option>
+                                    <mat-option [value]="'NE'">NE</mat-option>
+                                    <mat-option [value]="'NH'">NH</mat-option>
+                                    <mat-option [value]="'NJ'">NJ</mat-option>
+                                    <mat-option [value]="'NM'">NM</mat-option>
+                                    <mat-option [value]="'NV'">NV</mat-option>
+                                    <mat-option [value]="'NY'">NY</mat-option>
+                                    <mat-option [value]="'OH'">OH</mat-option>
+                                    <mat-option [value]="'OK'">OK</mat-option>
+                                    <mat-option [value]="'OR'">OR</mat-option>
+                                    <mat-option [value]="'PA'">PA</mat-option>
+                                    <mat-option [value]="'RI'">RI</mat-option>
+                                    <mat-option [value]="'SC'">SC</mat-option>
+                                    <mat-option [value]="'SD'">SD</mat-option>
+                                    <mat-option [value]="'TN'">TN</mat-option>
+                                    <mat-option [value]="'TX'">TX</mat-option>
+                                    <mat-option [value]="'UT'">UT</mat-option>
+                                    <mat-option [value]="'VA'">VA</mat-option>
+                                    <mat-option [value]="'VT'">VT</mat-option>
+                                    <mat-option [value]="'WA'">WA</mat-option>
+                                    <mat-option [value]="'WI'">WI</mat-option>
+                                    <mat-option [value]="'WV'">WV</mat-option>
+                                    <mat-option [value]="'WY'">WY</mat-option>
                                 </mat-select>
                                 <mat-error>State is required!</mat-error>
                                 <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
@@ -352,8 +354,8 @@
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Gas or Electric?</mat-label>
-                                <mat-select formControlName="commodity" required disabled>
-                                    <mat-option [value]="Electric">Electric</mat-option>
+                                <mat-select formControlName="commodity" required>
+                                    <mat-option [value]="'Electric'">Electric</mat-option>
                                 </mat-select>
                             </mat-form-field>
 
@@ -393,29 +395,28 @@
                         <div fxFlex="1 0 auto" fxLayout="column">
 
                             <mat-form-field appearance="outline" fxFlex="100">
-                                <textarea matInput formControlName="termsOfService">
+                                <textarea matInput class="terms-of-service">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
 
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
-
-                                        <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum.
                                         
-                                        <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. </p>
+Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices.
                                         
-                                        <p>Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. </p>
+Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper.
                                         
-                                        <p>Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede. </p>
-
+Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet. Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.
                                 </textarea>
                             </mat-form-field>
 
+                            <mat-slide-toggle formControlName="isAgreeToTermsOfService">
+                                I agree to the Terms of Service
+                            </mat-slide-toggle>
+
                             <!-- <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-slide-toggle matInput formControlName="isAgreeToTermsOfService" required>I agree to the Terms of Service</mat-slide-toggle>
+                                <mat-slide-toggle formControlName="isAgreeToTermsOfService" required>I agree to the Terms of Service</mat-slide-toggle>
                                 <mat-error>Please agree to the Terms of Service to continue</mat-error>
                             </mat-form-field> -->
 
-                        </div>
-
-                        <div fxFlex="1 0 auto" fxLayout="column">
+                            <br />
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>E-Signature</mat-label>
@@ -440,17 +441,25 @@
 
                 <mat-step [stepControl]="enrollmentStepConfirmation">
 
-                    <ng-template matStepLabel>Confirmation</ng-template>
+                    <form fxLayout="column" [formGroup]="enrollmentStepConfirmation">
 
-                    <div class="h2 m-16" fxLayout="row" fxLayoutAlign="center center">
-                        Confirmation Number: #123456789
-                    </div>
+                        <ng-template matStepLabel>Confirmation</ng-template>
 
-                    <div fxLayout="row" fxLayoutAlign="center center">
-                        <button mat-raised-button type="button" color="accent" (click)="finishEnrollment()">
-                            Close
-                        </button>
-                    </div>
+                        <h2>Confirmation</h2>
+
+                        <div class="h2 m-16" fxLayout="row">
+                            Confirmation Number: #123456789
+                        </div>
+
+                        <br />
+    
+                        <div fxLayout="row" fxLayoutAlign="center center">
+                            <button mat-raised-button type="button" color="accent" (click)="finishEnrollment()">
+                                New Enrollment
+                            </button>
+                        </div>
+
+                    </form>
 
                 </mat-step>
 

@@ -93,24 +93,6 @@ export class EnrollComponent implements OnInit, OnDestroy
      */
     ngOnInit(): void
     {
-        // Reactive Form
-        // this.form = this._formBuilder.group({
-        //     company   : [
-        //         {
-        //             value   : 'Google',
-        //             disabled: true
-        //         }, Validators.required
-        //     ],
-        //     firstName : ['', Validators.required],
-        //     lastName  : ['', Validators.required],
-        //     address   : ['', Validators.required],
-        //     address2  : ['', Validators.required],
-        //     city      : ['', Validators.required],
-        //     state     : ['', Validators.required],
-        //     postalCode: ['', [Validators.required, Validators.maxLength(5)]],
-        //     country   : ['', Validators.required]
-        // });
-
         // Horizontal Stepper form steps
         this.enrollmentStepPostalCode = this._formBuilder.group({
             postalCode: ['', [Validators.required, Validators.maxLength(5)]]
@@ -128,12 +110,12 @@ export class EnrollComponent implements OnInit, OnDestroy
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
             serviceAddressLine1: ['', Validators.required],
-            serviceAddressLine2: ['', Validators.required],
-            serviceAddressCity: ['', Validators.required],
-            serviceAddressState: ['', Validators.required],
-            serviceAddressPostalCode: ['', [Validators.required, Validators.maxLength(5)]],
+            serviceAddressLine2: [''],
+            serviceAddressCity: [''],
+            serviceAddressState: [''],
+            serviceAddressPostalCode: [''],
             billingAddressLine1: ['', Validators.required],
-            billingAddressLine2: ['', Validators.required],
+            billingAddressLine2: [''],
             billingAddressCity: ['', Validators.required],
             billingAddressState: ['', Validators.required],
             billingAddressPostalCode: ['', [Validators.required, Validators.maxLength(5)]],
@@ -145,7 +127,7 @@ export class EnrollComponent implements OnInit, OnDestroy
         });
 
         this.enrollmentStepTermsOfService = this._formBuilder.group({
-            isAgreeToTermsOfService: ['', Validators.required],
+            isAgreeToTermsOfService: [''],
             eSignature: ['', Validators.required]
         });
 
