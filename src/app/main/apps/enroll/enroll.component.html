@@ -73,16 +73,18 @@
 
                         <ng-template matStepLabel>Service</ng-template>
 
-                        <div fxFlex="1 0 auto" fxLayout="row">
+                        <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
 
-                            <mat-form-field class="service-provider">
-                                <mat-select formControlName="serviceProvider" placeholder="Service Provider">
-                                  <mat-option [value]="ONC">
-                                    Oncor
-                                  </mat-option>
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Service Provider</mat-label>
+                                <mat-select formControlName="serviceProvider" required>
+                                    <mat-option [value]="'ONC'">
+                                        Oncor
+                                    </mat-option>
                                 </mat-select>
-                              </mat-form-field>
-
+                                <mat-error>Service Provider is required!</mat-error>
+                            </mat-form-field>
+        
                         </div>
 
                         <div fxLayout="row" fxLayoutAlign="center center">
@@ -98,7 +100,7 @@
 
                 </mat-step>
 
-                <mat-step [stepControl]="enrollmentStepEnergyProduct">
+                <!-- <mat-step [stepControl]="enrollmentStepEnergyProduct">
 
                     <form fxLayout="column" [formGroup]="enrollmentStepEnergyProduct">
 
@@ -142,9 +144,9 @@
                 
                                 </div>
                 
-                                <!-- <div class="no-products" *ngIf="products.length === 0">
+                                <div class="no-products" *ngIf="products.length === 0">
                                     No products found!
-                                </div> -->
+                                </div>
                     
                             </div>
 
@@ -161,7 +163,7 @@
 
                     </form>
 
-                </mat-step>
+                </mat-step> -->
 
                 <mat-step [stepControl]="enrollmentStepCustomerDetails">
 
@@ -199,7 +201,7 @@
         
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Address 2</mat-label>
-                                <textarea matInput formControlName="serviceAddressLine2">
+                                <input matInput formControlName="serviceAddressLine2">
                                 <mat-error>Address 2 is required!</mat-error>
                             </mat-form-field>
         
@@ -209,21 +211,21 @@
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>City</mat-label>
-                                <input matInput formControlName="serviceAddressCity" required disabled>Houston</input>
+                                <input matInput formControlName="serviceAddressCity" value="Houston" required disabled>
                                 <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                                 <mat-error>City is required!</mat-error>
                             </mat-form-field>
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>State</mat-label>
-                                <input matInput formControlName="serviceAddressState" required disabled>TX</input>
+                                <input matInput formControlName="serviceAddressState" value="TX" required disabled>
                                 <mat-icon matSuffix class="secondary-text">location_city</mat-icon>
                                 <mat-error>State is required!</mat-error>
                             </mat-form-field>
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Postal Code</mat-label>
-                                <input matInput formControlName="serviceAddressPostalCode" maxlength="5" required disabled>{{postalCode.value}}</input>
+                                <input matInput formControlName="serviceAddressPostalCode" value="{{postalCode.value}}" maxlength="5" required disabled>
                                 <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
                                 <mat-error>Postal Code is required!</mat-error>
                             </mat-form-field>
@@ -236,13 +238,13 @@
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Address</mat-label>
-                                <input matInput formControlName="billingAddressLine1" required></input>
+                                <input matInput formControlName="billingAddressLine1" required>
                                 <mat-error>Address is required!</mat-error>
                             </mat-form-field>
         
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Address 2</mat-label>
-                                <textarea matInput formControlName="billingAddressLine2"></textarea>
+                                <input matInput formControlName="billingAddressLine2">
                                 <mat-error>Address 2 is required!</mat-error>
                             </mat-form-field>
             
@@ -317,7 +319,7 @@
 
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Postal Code</mat-label>
-                                <input matInput #postalCode2 formControlName="billingAddressPostalCode" maxlength="5" required disabled>
+                                <input matInput #postalCode2 formControlName="billingAddressPostalCode" maxlength="5" required>
                                 <mat-icon matSuffix class="secondary-text">markunread_mailbox</mat-icon>
                                 <mat-hint align="end">{{postalCode2.value.length}} / 5</mat-hint>
                                 <mat-error>Postal Code is required!</mat-error>
