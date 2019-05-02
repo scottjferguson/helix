@@ -19,13 +19,23 @@ export const navigation: HelixNavigation[] = [
                         id   : 'analytics',
                         title: 'Analytics',
                         type : 'item',
-                        url  : '/apps/dashboards/analytics'
+                        url  : '/apps/dashboards/analytics',
+                        badge    : {
+                            title: '25',
+                            bg   : '#FF6F00',
+                            fg   : '#FFFFFF'
+                        }
                     },
                     {
                         id   : 'project',
                         title: 'Project',
                         type : 'item',
-                        url  : '/apps/dashboards/project'
+                        url  : '/apps/dashboards/project',
+                        badge    : {
+                            title: '11',
+                            bg   : '#09d261',
+                            fg   : '#FFFFFF'
+                        }
                     }
                 ]
             },
@@ -43,7 +53,12 @@ export const navigation: HelixNavigation[] = [
                 translate: 'NAV.FILE_MANAGER',
                 type     : 'item',
                 icon     : 'folder',
-                url      : '/apps/file-manager'
+                url      : '/apps/file-manager',
+                badge    : {
+                    title    : '17',
+                    bg       : '#F44336',
+                    fg       : '#FFFFFF'
+                }
             }
         ]
     }
