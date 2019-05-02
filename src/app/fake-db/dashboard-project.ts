@@ -2,16 +2,13 @@ export class ProjectDashboardDb
 {
     public static projects = [
         {
-            'name': 'ACME Corp. Backend App'
+            'name': 'ABC Energy Backend App'
         },
         {
-            'name': 'ACME Corp. Frontend App'
+            'name': 'ABC Energy Frontend App'
         },
         {
-            'name': 'Creapond'
-        },
-        {
-            'name': 'Withinpixels'
+            'name': 'Marketing'
         }
     ];
 
