@@ -82,6 +82,9 @@
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Please Select</mat-label>
                                 <mat-select formControlName="serviceProvider" required>
+                                    <mat-option [value]="'CTP'">
+                                        Centerpoint Energy
+                                    </mat-option>
                                     <mat-option [value]="'ONC'">
                                         Oncor
                                     </mat-option>
