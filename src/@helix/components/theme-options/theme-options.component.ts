@@ -132,7 +132,7 @@ export class HelixThemeOptionsComponent implements OnInit, OnDestroy
         // Add customize nav item that opens the bar programmatically
         const customFunctionNavItem = {
             'id'      : 'custom-function',
-            'title'   : 'Custom Function',
+            'title'   : 'Customize',
             'type'    : 'group',
             'icon'    : 'settings',
             'children': [
