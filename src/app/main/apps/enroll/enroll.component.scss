@@ -1,5 +1,22 @@
 :host {
 
+    .center {
+        overflow: hidden;
+
+        .header {
+            position: relative;
+            height: 160px;
+            min-height: 160px;
+            max-height: 160px;
+        }
+
+        .content {
+            flex: 1 1 auto;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+
     .content {
 
         form {
