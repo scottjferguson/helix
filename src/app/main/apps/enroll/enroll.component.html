@@ -114,8 +114,7 @@
                                             </div>
                 
                                             <div class="length" fxLayout="row" fxLayoutAlign="center center">
-                                                <mat-icon class="length-icon s-20">attach_money</mat-icon>
-                                                <div class="min">11.39¢ / kWh</div>
+                                                <div class="min subheader">11.39¢ / kWh</div>
                                             </div>
                 
                                         </div>
@@ -150,8 +149,7 @@
                                             </div>
                 
                                             <div class="length" fxLayout="row" fxLayoutAlign="center center">
-                                                <mat-icon class="length-icon s-20">attach_money</mat-icon>
-                                                <div class="min">11.19¢ / kWh</div>
+                                                <div class="min subheader">11.19¢ / kWh</div>
                                             </div>
                 
                                         </div>
@@ -188,8 +186,7 @@
                                             </div>
                 
                                             <div class="length" fxLayout="row" fxLayoutAlign="center center">
-                                                <mat-icon class="length-icon s-20">attach_money</mat-icon>
-                                                <div class="min">10.99¢ / kWh</div>
+                                                <div class="min subheader">10.99¢ / kWh</div>
                                             </div>
                 
                                         </div>
@@ -417,9 +414,10 @@
                         <div fxFlex="1 0 auto" fxLayout="column">
 
                             <mat-form-field appearance="outline" fxFlex="100">
-                                <mat-label>Gas or Electric?</mat-label>
+                                <mat-label>Account Type</mat-label>
                                 <mat-select formControlName="commodity" required>
                                     <mat-option [value]="'Electric'">Electric</mat-option>
+                                    <mat-option [value]="'Gas'">Gas</mat-option>
                                 </mat-select>
                             </mat-form-field>
 

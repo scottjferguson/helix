@@ -86,6 +86,10 @@
                             background: mat-color($mat-blue-grey, 500);
                         }
 
+                        .subheader {
+                            font-size: 13px !important;
+                        }
+
                         .category {
                             text-transform: capitalize;
                             text-align: left;

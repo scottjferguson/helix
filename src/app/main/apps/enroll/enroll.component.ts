@@ -18,41 +18,6 @@ import { locale as turkish } from './i18n/tr';
 export class EnrollComponent implements OnInit, OnDestroy
 {
     form: FormGroup;
-    products:
-    [
-        {
-            'id'      : '15459251a6d6b397565',
-            'title'   : 'Basics of Angular',
-            'slug'    : 'basics-of-angular',
-            'category': 'web',
-            'length'  : 30,
-            'updated' : 'Jun 28, 2017'
-        },
-        {
-            'id'      : '154588a0864d2881124',
-            'title'   : 'Basics of TypeScript',
-            'slug'    : 'basics-of-typeScript',
-            'category': 'web',
-            'length'  : 60,
-            'updated' : 'Nov 01, 2017'
-        },
-        {
-            'id'      : '15453ba60d3baa5daaf',
-            'title'   : 'Android N: Quick Settings',
-            'slug'    : 'android-n-quick-settings',
-            'category': 'android',
-            'length'  : 120,
-            'updated' : 'Jun 28, 2017'
-        },
-        {
-            'id'      : '15453a06c08fb021776',
-            'title'   : 'Keep Sensitive Data Safe and Private',
-            'slug'    : 'keep-sensitive-data-safe-and-private',
-            'category': 'android',
-            'length'  : 45,
-            'updated' : 'Jun 28, 2017'
-        }
-    ];
 
     // Horizontal Stepper
     enrollmentStepPostalCode: FormGroup;
