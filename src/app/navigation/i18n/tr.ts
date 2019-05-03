@@ -4,7 +4,7 @@ export const locale = {
         'NAV': {
             'APPLICATIONS': 'Programlar',
             'DASHBOARDS'  : 'Kontrol Paneli',
-            'ENROLL'      : 'Kaydetmek',
+            'ENROLL'      : 'Yeni Kayıt',
             'FILE_MANAGER': 'Dosya Yöneticisi'
         }
     }

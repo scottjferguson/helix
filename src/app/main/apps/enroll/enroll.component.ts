@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 import { ProductService } from 'app/main/apps/enroll/product.service';
 import { HelixTranslationLoaderService } from '@helix/services/translation-loader.service';
@@ -24,7 +25,6 @@ export class EnrollComponent implements OnInit, OnDestroy
     enrollmentStepServiceProvider: FormGroup;
     enrollmentStepEnergyProduct: FormGroup;
     enrollmentStepCustomerDetails: FormGroup;
-    enrollmentStepAccountDetails: FormGroup;
     enrollmentStepTermsOfService: FormGroup;
     enrollmentStepConfirmation: FormGroup;
 
@@ -36,11 +36,13 @@ export class EnrollComponent implements OnInit, OnDestroy
      *
      * @param {ProductService} _productService,
      * @param {HelixTranslationLoaderService} _helixTranslationLoaderService,
+     * @param {Router} _router,
      * @param {FormBuilder} _formBuilder
      */
     constructor(
         //private _productService: ProductService,
         private _helixTranslationLoaderService: HelixTranslationLoaderService,
+        private _router: Router,
         private _formBuilder: FormBuilder
     )
     {
@@ -69,12 +71,16 @@ export class EnrollComponent implements OnInit, OnDestroy
         });
 
         this.enrollmentStepEnergyProduct = this._formBuilder.group({
-            
+            product1: [''],
+            product2: [''],
+            product3: ['']
         });
 
         this.enrollmentStepCustomerDetails = this._formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
+            email: ['', Validators.required],
+            phone: ['', Validators.required],
             serviceAddressLine1: ['', Validators.required],
             serviceAddressLine2: [''],
             serviceAddressCity: [''],
@@ -85,9 +91,6 @@ export class EnrollComponent implements OnInit, OnDestroy
             billingAddressCity: ['', Validators.required],
             billingAddressState: ['', Validators.required],
             billingAddressPostalCode: ['', [Validators.required, Validators.maxLength(5)]],
-        });
-
-        this.enrollmentStepAccountDetails = this._formBuilder.group({
             commodity: ['', Validators.required],
             accountNumber: ['', Validators.required],
         });
@@ -127,6 +130,6 @@ export class EnrollComponent implements OnInit, OnDestroy
      */
     finishEnrollment(): void
     {
-        location.reload();
+        this._router.navigate(['./apps/enroll']);
     }
 }

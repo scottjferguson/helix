@@ -4,7 +4,7 @@ export const locale = {
         'NAV': {
             'APPLICATIONS': 'Aplicaciones',
             'DASHBOARDS'  : 'Tableros',
-            'ENROLL'      : 'Inscribirse',
+            'ENROLL'      : 'Nueva inscripcion',
             'FILE_MANAGER': 'Archivos'
         }
     }
