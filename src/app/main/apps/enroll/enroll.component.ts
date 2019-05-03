@@ -18,7 +18,8 @@ import { locale as turkish } from './i18n/tr';
 export class EnrollComponent implements OnInit, OnDestroy
 {
     form: FormGroup;
-    products: [
+    products:
+    [
         {
             'id'      : '15459251a6d6b397565',
             'title'   : 'Basics of Angular',

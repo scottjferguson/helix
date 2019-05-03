@@ -1,6 +1,6 @@
 <div id="forms" class="page-layout simple fullwidth" fxLayout="column">
 
-    
+    <!-- HEADER -->
     <div class="header accent p-24 h-160" fxLayout="row" fxLayoutAlign="start center">
         <div fxLayout="column" fxLayoutAlign="center start">
             <div fxLayout="row" fxLayoutAlign="start center">
@@ -13,22 +13,6 @@
             <div class="h1 mt-16">Enroll New Customer</div>
         </div>
     </div>
-
-    <!-- HEADER -->
-    <!-- <div class="header accent p-16 p-sm-24" fxLayout="column" fxLayoutAlign="center center">
-
-        <div class="hero-text">
-            <mat-icon class="hero-icon">school</mat-icon>
-            <h1 [@animate]="{value:'*',params:{delay:'100ms', y:'25px'}}">
-                WELCOME TO ACADEMY
-            </h1>
-            <h3 [@animate]="{value:'*',params:{delay:'100ms', y:'25px'}}">
-                Our courses will step you through the process of building a small application, or adding a new feature
-                to an existing application.
-            </h3>
-        </div>
-
-    </div> -->
     <!-- / HEADER -->
 
     <!-- CONTENT -->
@@ -107,57 +91,134 @@
 
                 </mat-step>
 
-                <!-- <mat-step [stepControl]="enrollmentStepEnergyProduct">
+                <mat-step [stepControl]="enrollmentStepEnergyProduct">
 
                     <form fxLayout="column" [formGroup]="enrollmentStepEnergyProduct">
 
                         <ng-template matStepLabel>Product</ng-template>
 
+                        <h2>Product Selection</h2>
+
                         <div fxFlex="1 0 auto" fxLayout="row">
 
                             <div class="products" fxLayout="row wrap" fxLayoutAlign="center" [@animateStagger]="{value:'50'}">
 
-                                <div class="product" *ngFor="let product of products" fxFlex="100" fxFlex.gt-xs="50"
-                                        fxFlex.gt-sm="33" [ngClass]="product.category" [@animate]="{value:'*',params:{y:'100%'}}">
+                                <div class="product" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-sm="33" [ngClass]="web" [@animate]="{value:'*',params:{y:'100%'}}">
                 
                                     <div class="product-content" fxLayout="column" fxFlex="1 1 auto">
                 
-                                        <div class="header" fxLayout="row" fxLayoutAlign="center center" [ngClass]="product.category + '-bg'">
+                                        <div class="header" fxLayout="row" fxLayoutAlign="center center" [ngClass]="'android-bg'">
                 
                                             <div class="category" fxFlex>
-                                                {{product.category}}
+                                                6 Month Term
                                             </div>
                 
                                             <div class="length" fxLayout="row" fxLayoutAlign="center center">
-                                                <mat-icon class="length-icon s-20">access_time</mat-icon>
-                                                <div class="min">{{product.length}} min</div>
+                                                <mat-icon class="length-icon s-20">attach_money</mat-icon>
+                                                <div class="min">11.39¢ / kWh</div>
                                             </div>
                 
                                         </div>
                 
                                         <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
-                                            <div class="h1">{{product.title}}</div>
-                                            <div class="updated">Updated {{product.updated}}</div>
+                                            <div class="h1">Electric 6 Months - Fixed Rate</div>
+                                            <div class="updated">Get peace of mind with out 100% renewable energy product.</div>
                                         </div>
                 
                                         <div class="footer" fxLayout="row" fxLayoutAlign="center center">
-                                            <button mat-button color="accent"
-                                                    [routerLink]="'/apps/academy/products/' + product.id + '/' + product.slug">
-                                                START
-                                            </button>
+                                            
+                                            <mat-slide-toggle formControlName="product1">
+                                                
+                                            </mat-slide-toggle>
+                                            
                                         </div>
                 
                                     </div>
                 
                                 </div>
+
+
+
+                                <div class="product" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-sm="33" [ngClass]="web" [@animate]="{value:'*',params:{y:'100%'}}">
                 
-                                <div class="no-products" *ngIf="products.length === 0">
-                                    No products found!
+                                    <div class="product-content" fxLayout="column" fxFlex="1 1 auto">
+                
+                                        <div class="header" fxLayout="row" fxLayoutAlign="center center" [ngClass]="'web-bg'">
+                
+                                            <div class="category" fxFlex>
+                                                12 Month Term
+                                            </div>
+                
+                                            <div class="length" fxLayout="row" fxLayoutAlign="center center">
+                                                <mat-icon class="length-icon s-20">attach_money</mat-icon>
+                                                <div class="min">11.19¢ / kWh</div>
+                                            </div>
+                
+                                        </div>
+                
+                                        <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+                                            <div class="h1">Electric 12 Months - Fixed Rate</div>
+                                            <div class="updated">Get peace of mind with out 100% renewable energy product.</div>
+                                        </div>
+                
+                                        <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+                                            
+                                            <mat-slide-toggle formControlName="product2">
+                                                
+                                            </mat-slide-toggle>
+                                            
+                                        </div>
+                
+                                    </div>
+                
                                 </div>
+
+
+
+
+
+                                <div class="product" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-sm="33" [ngClass]="web" [@animate]="{value:'*',params:{y:'100%'}}">
+                
+                                    <div class="product-content" fxLayout="column" fxFlex="1 1 auto">
+                
+                                        <div class="header" fxLayout="row" fxLayoutAlign="center center" [ngClass]="'firebase-bg'">
+                
+                                            <div class="category" fxFlex>
+                                                24 Month Term
+                                            </div>
+                
+                                            <div class="length" fxLayout="row" fxLayoutAlign="center center">
+                                                <mat-icon class="length-icon s-20">attach_money</mat-icon>
+                                                <div class="min">10.99¢ / kWh</div>
+                                            </div>
+                
+                                        </div>
+                
+                                        <div class="content" fxLayout="column" fxLayoutAlign="center center" fxFlex="1 1 auto">
+                                            <div class="h1">Electric 24 Months - Fixed Rate</div>
+                                            <div class="updated">Get peace of mind with out 100% renewable energy product.</div>
+                                        </div>
+                
+                                        <div class="footer" fxLayout="row" fxLayoutAlign="center center">
+                                            
+                                            <mat-slide-toggle formControlName="product3">
+                                                
+                                            </mat-slide-toggle>
+                                            
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+
+
+
                     
                             </div>
 
                         </div>
+
+                        <br />
 
                         <div fxLayout="row" fxLayoutAlign="center center">
                             <button class="mr-8" mat-raised-button matStepperPrevious type="button" color="accent">
@@ -170,7 +231,7 @@
 
                     </form>
 
-                </mat-step> -->
+                </mat-step>
 
                 <mat-step [stepControl]="enrollmentStepCustomerDetails">
 
