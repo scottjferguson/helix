@@ -41,7 +41,7 @@ export const navigation: HelixNavigation[] = [
             },
             {
                 id       : 'enroll',
-                title    : 'Enroll',
+                title    : 'New Enrollment',
                 translate: 'NAV.ENROLL',
                 type     : 'item',
                 icon     : 'person',
