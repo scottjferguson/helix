@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { Router } from '@angular/router';
 
 import { ProductService } from 'app/main/apps/enroll/product.service';
 import { HelixTranslationLoaderService } from '@helix/services/translation-loader.service';
@@ -36,13 +35,11 @@ export class EnrollComponent implements OnInit, OnDestroy
      *
      * @param {ProductService} _productService,
      * @param {HelixTranslationLoaderService} _helixTranslationLoaderService,
-     * @param {Router} _router,
      * @param {FormBuilder} _formBuilder
      */
     constructor(
         //private _productService: ProductService,
         private _helixTranslationLoaderService: HelixTranslationLoaderService,
-        private _router: Router,
         private _formBuilder: FormBuilder
     )
     {
@@ -130,6 +127,6 @@ export class EnrollComponent implements OnInit, OnDestroy
      */
     finishEnrollment(): void
     {
-        this._router.navigate(['./apps/enroll']);
+        
     }
 }
