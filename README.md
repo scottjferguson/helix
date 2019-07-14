@@ -22,6 +22,8 @@ A Customer management platform
 
 https://helix-prod.azurewebsites.net/
 
+<br />
+
 ### Development Environment
 
 While you do not need to reflect my exact development environment on your machine, it's sometimes useful to provide potential Helix developers with a list of the exact products and versions I currently use to develop this product:
