@@ -20,7 +20,9 @@
 
         <div class="enrollment-stepper-wrapper">
 
-            <!-- HORIZONTAL STEPPER EXAMPLE -->
+            <!-- ENROLLMENT FORM -->
+            <form #enrollmentForm="ngForm"(ngSubmit)="onEnrollLead(enrollmentForm.value)">
+
             <mat-horizontal-stepper class="mat-elevation-z4" [linear]="true">
 
                 <mat-step [stepControl]="enrollmentStepPostalCode">
@@ -519,7 +521,9 @@ Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risu
                 </mat-step>
 
             </mat-horizontal-stepper>
-            <!-- / HORIZONTAL STEPPER EXAMPLE -->
+
+        </form>
+            <!-- / ENROLLMENT FORM -->
 
         </div>
 

@@ -1,3 +1,5 @@
+import { Http, Response, Headers, RequestOptions } from '@angular/http'; 
+import { Observable } from 'rxjs/Observable';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subject } from 'rxjs';
@@ -33,11 +35,13 @@ export class EnrollComponent implements OnInit, OnDestroy
     /**
      * Constructor
      *
+     * @param {Http} _http,
      * @param {ProductService} _productService,
      * @param {HelixTranslationLoaderService} _helixTranslationLoaderService,
      * @param {FormBuilder} _formBuilder
      */
     constructor(
+        private _http: Http,
         //private _productService: ProductService,
         private _helixTranslationLoaderService: HelixTranslationLoaderService,
         private _formBuilder: FormBuilder
@@ -123,10 +127,39 @@ export class EnrollComponent implements OnInit, OnDestroy
     // -----------------------------------------------------------------------------------------------------
 
     /**
+     * Enroll the lead
+     */
+    onEnrollLead(lead: Lead): void
+    {
+        let url: string = "https://prod-15.centralus.logic.azure.com/workflows/ee3d0fef84ec4fde8266c733c78dce8e/triggers/manual/paths/invoke/lead/create?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=tazTctrkiWRj15AfGDjNogjmtcK8IH8OSaabmp2cFuc";
+
+        this._http.post(url, lead).subscribe(status=> console.log(JSON.stringify(status)));
+    }
+
+    /**
      * Finish the enrollment
      */
     finishEnrollment(): void
     {
         
     }
+}
+
+export interface Lead {
+    id : number;
+    orderId : string;
+    orderStatus : string;
+    type : string;
+    createDate : string;
+    effectiveDate : string;
+    customerType : string;
+    firstName : string;
+    lastName : string;
+    billingAddress1 : string;
+    billingAddress2 : string;
+    billingCity : string;
+    billingState : string;
+    billingPostal : string;
+    billingCounty : string;
+    billingCountry : string;
 }
